@@ -187,7 +187,6 @@ module.exports = class ConsumerGroup {
     this.leaderId = groupData.leaderId
     this.memberId = groupData.memberId
     this.members = groupData.members
-    this.groupInstanceId = groupData.groupInstanceId
     this.groupProtocol = groupData.groupProtocol
   }
 
