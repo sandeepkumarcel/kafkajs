@@ -3,7 +3,7 @@
 testCommand="$1"
 extraArgs="$2"
 
-export COMPOSE_FILE=${COMPOSE_FILE:="docker-compose.2_4.yml"}
+export COMPOSE_FILE=${COMPOSE_FILE:="docker compose.2_4.yml"}
 export KAFKAJS_DEBUG_PROTOCOL_BUFFERS=${KAFKAJS_DEBUG_PROTOCOL_BUFFERS:=1}
 
 find_container_id() {
@@ -16,7 +16,7 @@ find_container_id() {
 }
 
 quit() {
-  docker-compose -f "${COMPOSE_FILE}" down --remove-orphans
+  docker compose -f "${COMPOSE_FILE}" down --remove-orphans
   exit 1
 }
 
@@ -51,6 +51,6 @@ TEST_EXIT=$?
 echo
 
 if [ -z ${DO_NOT_STOP} ]; then
-  docker-compose -f "${COMPOSE_FILE}" down --remove-orphans
+  docker compose -f "${COMPOSE_FILE}" down --remove-orphans
 fi
 exit ${TEST_EXIT}
