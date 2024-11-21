@@ -25,7 +25,7 @@ const decodeMessages = async decoder => {
     while (messagesDecoder.canReadBytes(RECORD_BATCH_OVERHEAD)) {
       try {
         const recordBatch = await RecordBatchDecoder(messagesDecoder)
-        for(let i = 0; i < recordBatch.records.length; i++) {
+        for (let i = 0; i < recordBatch.records.length; i++) {
           records.push(recordBatch.records[i])
         }
       } catch (e) {
